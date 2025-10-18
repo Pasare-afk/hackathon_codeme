@@ -1,0 +1,424 @@
+<!-- Save as: pagina1-zdg-fixed.html -->
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Voci Vizuale - Acasă (ZdG feed) — fixed</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-1:#ffe8f0;
+      --bg-2:#d6e8ff;
+      --accent-1:#ff6cab;
+      --accent-2:#00c3ff;
+      --text:#202a44;
+      --muted:rgba(0,0,0,0.7);
+      --muted-2:rgba(0,0,0,0.55);
+      --shadow: 0 12px 40px rgba(0,0,0,0.15);
+      --container:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter, system-ui, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(255,108,171,0.2), transparent 8%),
+        radial-gradient(700px 360px at 90% 80%, rgba(0,195,255,0.15), transparent 8%),
+        linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:80px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    header.navbar{position:sticky;top:14px;z-index:80;padding:8px 0}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-radius:18px;background:rgba(255,255,255,0.5);box-shadow:var(--shadow)}
+    .brand{display:flex;align-items:center;gap:12px;font-family:Poppins;font-weight:700}
+    .brand .logo{width:44px;height:44px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;font-weight:800}
+    nav ul{display:flex;gap:10px;list-style:none}
+    nav a.btn-nav{padding:10px 14px;border-radius:10px;font-weight:600;font-size:.96rem;color:var(--muted-2)}
+    nav a.btn-primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff}
+
+    .hero{padding:90px 0 40px}
+    .hero-inner{display:grid;grid-template-columns:2fr 1fr;gap:36px;align-items:center}
+    .hero-left{min-width:0}
+    h1{font-family:Poppins;font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:800;margin:0 0 12px 0;line-height:1.06;max-width:760px}
+    .lead{color:var(--muted);max-width:70ch;font-size:1.02rem}
+
+    .hero-card{background:rgba(255,255,255,0.55);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.06);border:1px solid rgba(255,255,255,0.6)}
+    .hero-card h3{margin:0 0 8px 0;font-family:Poppins;font-weight:700}
+    .hero-card p{margin:0;color:var(--muted)}
+
+    section{padding:40px 0}
+    h2{font-family:Poppins;font-size:1.6rem;margin-bottom:10px}
+    .muted{color:var(--muted)}
+
+    /* Latest news grid */
+    #latestNews .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:12px}
+    .news-card{background:rgba(255,255,255,0.98);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.04);display:flex;flex-direction:column;min-height:140px}
+    .news-card a{display:flex;flex-direction:column;height:100%;color:inherit}
+    .news-thumb{height:140px;background-size:cover;background-position:center;flex-shrink:0}
+    .news-body{padding:12px;display:flex;flex-direction:column;gap:6px}
+    .news-body h3{font-size:1.02rem;margin:0;font-weight:700}
+    .news-meta{font-size:.82rem;color:var(--muted)}
+    .news-desc{font-size:.95rem;color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+    .news-error{color:var(--muted);padding:12px;border-radius:10px;background:rgba(255,255,255,0.6)}
+    footer{padding:30px 0;border-top:1px solid rgba(0,0,0,0.06);text-align:center;margin-top:40px}
+
+    @media (max-width:980px){.hero-inner{grid-template-columns:1fr 340px;gap:20px}.news-thumb{height:120px}}
+    @media (max-width:720px){.hero-inner{grid-template-columns:1fr;gap:18px}.hero{padding:60px 0 30px}}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="logo">SS</span>
+        <span>Access.md</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a class="btn-nav" href="#top">Home</a></li>
+          <li><a class="btn-nav" href="#stiri">About us</a></li>
+    
+          <li><a class="btn-nav" href="#video">Projects</a></li>
+          <li><a class="btn-nav" href="#contact">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>Efficiency and Consultation in Democracy</h1>
+          <p class="lead">A space dedicated to communities seeking real dialogue — accessible, transparent, and results-oriented.</p>
+
+          <div class="hero-card" style="margin-top:18px">
+            <h3>About Access.md</h3>
+            <p style="color:var(--muted)">Access.md implements projects with the aim of guaranteeing accessibility and strengthening social inclusion for people with hearing impairments.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="stiri" class="container">
+      <h2>The latest news</h2>
+      <p class="muted">Keep in touch with articles and announcements relevant to the deaf community.</p>
+
+      <!-- Latest news (ZdG / Politic) -->
+      <div id="latestNews" style="margin-top:14px;">
+        <h3 style="margin:0 0 8px 0;font-family:Poppins">Latest from ZdG — Politic</h3>
+        <div id="newsList" class="news-grid" aria-live="polite">
+          <div class="news-error">Loading latest news from ZdG…</div>
+        </div>
+
+        <p style="margin-top:10px;font-size:.9rem;color:var(--muted)">
+          Note: this demo fetches ZdG via a public proxy so your browser can access cross-origin content. For production, use a server-side proxy or serverless function to fetch & cache the feed.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- rest unchanged -->
+
+    <section id="video" class="container" style="margin-top:40px; text-align:center;">
+      <h2 style="font-family:Poppins, sans-serif; font-size:2rem; font-weight:700; color:var(--text); margin-bottom:20px;">Projects</h2>
+      <h3 style="font-family:Poppins, sans-serif; font-size:1.5rem; font-weight:600; color:var(--accent-1); margin-bottom:12px;">Visual Voices</h3>
+      <p class="muted" style="font-size:1rem; max-width:600px; margin:0 auto 20px; color:var(--muted);">
+        Visualises video content with automatic sign language translation.
+      </p>
+
+      <!-- Simplified Py runner area: only a label and one button -->
+      <div style="display:flex;justify-content:center;gap:12px;align-items:center;margin-top:18px;">
+        <div style="font-family:Inter, sans-serif; font-size:1rem; color:var(--muted);">Test program</div>
+        <button id="runPyBtn" style="padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;border:0;cursor:pointer;font-weight:700;">Rulează test</button>
+      </div>
+
+      <div id="pyMiniOutput" style="margin-top:12px; max-width:720px; margin-left:auto; margin-right:auto; background:rgba(0,0,0,0.85); color:#fff; padding:12px; border-radius:8px; min-height:80px; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; display:none; white-space:pre-wrap; overflow:auto;">
+      </div>
+
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p class="muted">For more information, you can contact us at:</p>
+      <p>Email: <a href="mailto:contact@example.org" style="color:var(--accent-1)">contact@example.org</a></p>
+      <p>Telefon: <a href="tel:+123456789" style="color:var(--accent-1)">+123456789</a></p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p class="muted">© <span id="year"></span> Voci Vizuale — Toate drepturile rezervate.</p>
+  </footer>
+
+  <script>
+    // small helpers
+    function escapeHtml(s){ return String(s||'').replace(/[&<>\"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    function asProxy(url){ return 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url); }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple subtitle demo
+    (function demoSubtitles(){
+      const subtitlesBox = document.getElementById("liveSubtitles");
+      const exampleLines = [
+        "Bun venit pe platforma Voci Vizuale.",
+        "Acest videoclip oferă informații despre incluziunea socială.",
+        "Subtitrările pot fi generate în timp real printr-un serviciu Speech-to-Text.",
+        "Mulțumim că sprijiniți accesibilitatea!"
+      ];
+      let line = 0;
+      setInterval(()=>{ subtitlesBox.textContent = exampleLines[line]; line=(line+1)%exampleLines.length; },5000);
+    })();
+
+    /* -------------------------
+       ZdG connection logic (improved)
+       - try common RSS/Atom URLs
+       - robustly extract images from feed XML (media:, enclosure, content:encoded)
+       - fallback to scraping category page and article pages to find og:image or first img
+       - resolve relative URLs to absolute
+       - render cards safely without innerHTML injection for background images
+    -------------------------- */
+    (async function loadZdG(){
+      const newsList = document.getElementById('newsList');
+
+      const candidateFeeds = [
+        'https://www.zdg.md/categoria/stiri/politic/feed/',
+        'https://www.zdg.md/categoria/stiri/politic/?feed=rss2',
+        'https://www.zdg.md/categoria/stiri/politic/?feed=atom',
+        'https://www.zdg.md/feed/',
+        'https://www.zdg.md/?feed=rss2',
+        'https://www.zdg.md/category/politic/feed/'
+      ];
+
+      const placeholder = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="#f6f0f5"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ddd" font-size="18">No image</text></svg>`
+      );
+
+      function createCard(item){
+        // Create elements programmatically to avoid HTML injection issues
+        const card = document.createElement('article');
+        card.className = 'news-card';
+        const link = document.createElement('a');
+        link.href = item.link || '#';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+
+        const thumb = document.createElement('div');
+        thumb.className = 'news-thumb';
+        const imgUrl = item.image || placeholder;
+        // Use CSS background-image via style property (browser will encode as needed)
+        try{ thumb.style.backgroundImage = `url("${imgUrl}")`; }catch(e){ thumb.style.backgroundImage = `url("${placeholder}")`; }
+
+        const body = document.createElement('div');
+        body.className = 'news-body';
+        const h3 = document.createElement('h3');
+        h3.textContent = item.title || 'No title';
+        const meta = document.createElement('div');
+        meta.className = 'news-meta';
+        meta.textContent = item.pubDate || '';
+        const p = document.createElement('p');
+        p.className = 'news-desc';
+        p.textContent = item.description || '';
+
+        body.appendChild(h3);
+        if(meta.textContent) body.appendChild(meta);
+        body.appendChild(p);
+
+        link.appendChild(thumb);
+        link.appendChild(body);
+        card.appendChild(link);
+        return card;
+      }
+
+      function renderCards(items){
+        newsList.innerHTML = '';
+        if(!items || items.length === 0){
+          newsList.innerHTML = `<div class="news-error">No articles found.</div>`;
+          return;
+        }
+        items.slice(0,4).forEach(it=> newsList.appendChild(createCard(it)));
+      }
+
+      // Helper: resolve possibly-relative URLs based on a base
+      function resolveUrl(url, base){
+        try{ return new URL(url, base).href; }catch(e){ return url || ''; }
+      }
+
+      // Helper: try to extract image url from serialized XML string for a single <item> / <entry>
+      function extractImageFromXmlString(xmlStr){
+        // Search for media:thumbnail url="..." or media:content url="..." or enclosure url="..."
+        let m = xmlStr.match(/<media:thumbnail[^>]*url=["']([^"']+)["']/i) ||
+                xmlStr.match(/<media:content[^>]*url=["']([^"']+)["']/i) ||
+                xmlStr.match(/<enclosure[^>]*url=["']([^"']+)["']/i);
+        if(m && m[1]) return m[1];
+        // Search inside content:encoded for first <img src="...">
+        m = xmlStr.match(/<content:encoded[^>]*>([\s\S]*?)<\/content:encoded>/i);
+        if(m && m[1]){
+          const img = m[1].match(/<img[^>]*src=["']([^"']+)["']/i);
+          if(img && img[1]) return img[1];
+        }
+        // description may have an img
+        m = xmlStr.match(/<description[^>]*>([\s\S]*?)<\/description>/i);
+        if(m && m[1]){
+          const img = m[1].match(/<img[^>]*src=["']([^"']+)["']/i);
+          if(img && img[1]) return img[1];
+        }
+        return '';
+      }
+
+      // Try RSS/Atom feeds first
+      for(const feedUrl of candidateFeeds){
+        try{
+          const proxy = asProxy(feedUrl);
+          const resp = await fetch(proxy, {cache: 'no-store'});
+          if(!resp.ok) throw new Error('Network response not ok: ' + resp.status);
+          const text = await resp.text();
+          if(!/(<rss|<feed|<item)/i.test(text)) continue;
+
+          const parser = new DOMParser();
+          const xml = parser.parseFromString(text, 'application/xml');
+          const items = xml.querySelectorAll('item, entry');
+          if(!items || items.length === 0) continue;
+
+          const parsed = [];
+          for(const it of items){
+            const title = it.querySelector('title') ? it.querySelector('title').textContent.trim() : '';
+            let link = '';
+            const linkNode = it.querySelector('link');
+            if(linkNode){
+              if(linkNode.getAttribute && linkNode.getAttribute('href')) link = linkNode.getAttribute('href');
+              else link = linkNode.textContent.trim();
+            } else {
+              const guid = it.querySelector('guid');
+              link = guid ? guid.textContent.trim() : '';
+            }
+            const pubDate = (it.querySelector('pubDate') && it.querySelector('pubDate').textContent) || (it.querySelector('updated') && it.querySelector('updated').textContent) || '';
+            let desc = '';
+            const descNode = it.querySelector('description') || it.querySelector('summary') || it.querySelector('content');
+            if(descNode) desc = (descNode.textContent || '').replace(/(<([^>]+)>)/gi,'').trim();
+
+            // Best-effort image extraction: serialize the item and run regexes
+            const xmlString = new XMLSerializer().serializeToString(it);
+            let img = extractImageFromXmlString(xmlString) || '';
+
+            // Resolve relative image URL later against feedUrl or link
+            parsed.push({ title, link, pubDate: pubDate ? new Date(pubDate).toLocaleString() : '', description: desc, image: img });
+            if(parsed.length >= 8) break; // keep some buffer
+          }
+
+          // For items missing images, attempt to fetch the article page and extract og:image / first <img>
+          const fillPromises = parsed.slice(0,6).map(async (p) => {
+            if(p.image) { p.image = resolveUrl(p.image, feedUrl); return p; }
+            if(!p.link) return p;
+            try{
+              const resp2 = await fetch(asProxy(p.link), {cache:'no-store'});
+              if(!resp2.ok) return p;
+              const htmlText = await resp2.text();
+              // meta og:image
+              const m1 = htmlText.match(/<meta[^>]*(property|name)=["'](?:og:image|twitter:image)["'][^>]*content=["']([^"']+)["']/i);
+              if(m1 && m1[2]) { p.image = resolveUrl(m1[2], p.link); return p; }
+              // first <img> in the article
+              const m2 = htmlText.match(/<article[\s\S]*?<img[^>]*src=["']([^"']+)["']/i) || htmlText.match(/<img[^>]*src=["']([^"']+)["']/i);
+              if(m2 && m2[1]) { p.image = resolveUrl(m2[1], p.link); return p; }
+            }catch(err){ /* ignore per-item failures */ }
+            return p;
+          });
+
+          const filled = await Promise.all(fillPromises);
+
+          // Ensure absolute URLs and fallback to placeholder
+          filled.forEach(p=> { p.image = p.image ? resolveUrl(p.image, feedUrl) : ''; });
+
+          if(filled.length > 0){
+            renderCards(filled);
+            return; // success
+          }
+        } catch(err){
+          console.warn('Feed try failed for', feedUrl, err);
+          continue;
+        }
+      }
+
+      // No feed succeeded — fallback: parse the category HTML page and extract article links + images
+      try{
+        const categoryUrl = 'https://www.zdg.md/categoria/stiri/politic/';
+        const resp = await fetch(asProxy(categoryUrl), {cache:'no-store'});
+        if(!resp.ok) throw new Error('Network response not ok: ' + resp.status);
+        const htmlText = await resp.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, 'text/html');
+
+        const selectors = [
+          'article a', '.post .entry-title a', '.entry-title a', '.articles-list a', '.listado a', 'h2 a', 'h3 a', 'h4 a'
+        ];
+        let nodes = [];
+        for(const sel of selectors){
+          nodes = Array.from(doc.querySelectorAll(sel)).filter(a => a && (a.href || a.getAttribute('href')));
+          if(nodes.length) break;
+        }
+        if(!nodes || nodes.length === 0){
+          newsList.innerHTML = `<div class="news-error">No articles found on ZdG listing page.</div>`;
+          return;
+        }
+
+        const seen = new Set();
+        const articles = [];
+        for(const a of nodes){
+          const href = a.href || a.getAttribute('href');
+          const title = (a.textContent || a.innerText || '').trim();
+          if(!href || !title) continue;
+          const resolved = resolveUrl(href, categoryUrl);
+          if(seen.has(resolved)) continue;
+          seen.add(resolved);
+          articles.push({ title, link: resolved, description: '', pubDate: '', image: '' });
+          if(articles.length >= 6) break;
+        }
+
+        // Try to fetch each article page to extract og:image or first image
+        const articlePromises = articles.map(async (art) => {
+          try{
+            const r = await fetch(asProxy(art.link), {cache:'no-store'});
+            if(!r.ok) return art;
+            const t = await r.text();
+            const m1 = t.match(/<meta[^>]*(property|name)=["'](?:og:image|twitter:image)["'][^>]*content=["']([^"']+)["']/i);
+            if(m1 && m1[2]) { art.image = resolveUrl(m1[2], art.link); }
+            else{
+              const m2 = t.match(/<article[\s\S]*?<img[^>]*src=["']([^"']+)["']/i) || t.match(/<img[^>]*src=["']([^"']+)["']/i);
+              if(m2 && m2[1]) art.image = resolveUrl(m2[1], art.link);
+            }
+          }catch(e){ /* ignore */ }
+          return art;
+        });
+        const final = await Promise.all(articlePromises);
+        final.forEach(f=> { if(!f.image) f.image = ''; });
+        if(final.length > 0) { renderCards(final); return; }
+
+      } catch(htmlErr){
+        console.error('HTML fallback failed', htmlErr);
+        newsList.innerHTML = `<div class="news-error">Could not load ZdG news (${escapeHtml(htmlErr.message)}). Try a server-side proxy.</div>`;
+      }
+
+    })();
+
+    // small utility for console-friendly logging of network issues
+    (function navbarScroll(){
+      const navbar = document.querySelector('header.navbar');
+      window.addEventListener('scroll', ()=> navbar.classList.toggle('scrolled', window.scrollY > 50));
+    })();
+
+  </script>
+</body>
+</html>
